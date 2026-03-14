@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b4r6dccfkqmcb"]
+
+[ext_resource type="Script" uid="uid://dvbs6ndua0r2g" path="res://scripts/gameplay/projectiles/bullet.gd" id="1_a60bp"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_a60bp"]
+size = Vector2(20, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a60bp"]
+
+[node name="Bullet" type="Area2D" unique_id=930623741]
+script = ExtResource("1_a60bp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=578977834]
+texture = SubResource("PlaceholderTexture2D_a60bp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=512484085]
+shape = SubResource("CircleShape2D_a60bp")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=2043903221]

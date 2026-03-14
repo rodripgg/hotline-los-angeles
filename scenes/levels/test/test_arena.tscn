@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://cw66xpitl0575"]
+
+[ext_resource type="PackedScene" uid="uid://ch3qto5qo2fku" path="res://scenes/entities/characters/player.tscn" id="1_x3phh"]
+[ext_resource type="Texture2D" uid="uid://bgvfgv1741ns4" path="res://assets/art/textures/world/FloorTile.png" id="2_3ial6"]
+
+[node name="TestArena" type="Node2D" unique_id=1834121703]
+
+[node name="Floor" type="TileMapLayer" parent="." unique_id=88714161]
+
+[node name="Walls" type="Node2D" parent="." unique_id=1397311577]
+visible = false
+
+[node name="WallTop" type="StaticBody2D" parent="Walls" unique_id=1767638638]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallTop" unique_id=1853342227]
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/WallTop" unique_id=314554911]
+
+[node name="WallBottom" type="StaticBody2D" parent="Walls" unique_id=25466970]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallBottom" unique_id=1629164172]
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/WallBottom" unique_id=1045538506]
+
+[node name="WallLeft" type="StaticBody2D" parent="Walls" unique_id=1667551173]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallLeft" unique_id=235016197]
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/WallLeft" unique_id=1458131560]
+
+[node name="WallRight" type="StaticBody2D" parent="Walls" unique_id=85143736]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallRight" unique_id=1667442630]
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/WallRight" unique_id=380100663]
+
+[node name="Floor2" type="Node2D" parent="." unique_id=50837487]
+
+[node name="Floor2" type="Sprite2D" parent="Floor2" unique_id=630973542]
+texture = ExtResource("2_3ial6")
+
+[node name="Floor3" type="Sprite2D" parent="Floor2" unique_id=1050808115]
+position = Vector2(-1024, 0)
+texture = ExtResource("2_3ial6")
+
+[node name="Floor4" type="Sprite2D" parent="Floor2" unique_id=1854013456]
+position = Vector2(2048, 0)
+texture = ExtResource("2_3ial6")
+
+[node name="Floor5" type="Sprite2D" parent="Floor2" unique_id=50001271]
+position = Vector2(1024, 0)
+texture = ExtResource("2_3ial6")
+
+[node name="Floor6" type="Sprite2D" parent="Floor2" unique_id=641606569]
+position = Vector2(0, -1024)
+texture = ExtResource("2_3ial6")
+
+[node name="Floor7" type="Sprite2D" parent="Floor2" unique_id=113228446]
+position = Vector2(-1024, -1024)
+texture = ExtResource("2_3ial6")
+
+[node name="Floor8" type="Sprite2D" parent="Floor2" unique_id=1692448965]
+position = Vector2(2048, -1024)
+texture = ExtResource("2_3ial6")
+
+[node name="Floor9" type="Sprite2D" parent="Floor2" unique_id=747061082]
+position = Vector2(1024, -1024)
+texture = ExtResource("2_3ial6")
+
+[node name="Floor10" type="Sprite2D" parent="Floor2" unique_id=2003396427]
+position = Vector2(0, 1024)
+texture = ExtResource("2_3ial6")
+
+[node name="Floor11" type="Sprite2D" parent="Floor2" unique_id=2016328175]
+position = Vector2(-1024, 1024)
+texture = ExtResource("2_3ial6")
+
+[node name="Floor12" type="Sprite2D" parent="Floor2" unique_id=794178273]
+position = Vector2(2048, 1024)
+texture = ExtResource("2_3ial6")
+
+[node name="Floor13" type="Sprite2D" parent="Floor2" unique_id=1857204932]
+position = Vector2(1024, 1024)
+texture = ExtResource("2_3ial6")
+
+[node name="Player" parent="." unique_id=89750377 instance=ExtResource("1_x3phh")]

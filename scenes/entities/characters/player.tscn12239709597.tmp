@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://ch3qto5qo2fku"]
+
+[ext_resource type="Script" uid="uid://cdu7kobdkjjc2" path="res://scripts/gameplay/characters/player.gd" id="1_kjp8n"]
+[ext_resource type="PackedScene" uid="uid://b4r6dccfkqmcb" path="res://scenes/entities/weapons/bullet.tscn" id="2_4rl2u"]
+[ext_resource type="Texture2D" uid="uid://ccpgaxo2l26gt" path="res://assets/art/sprites/characters/Player00.png" id="3_4rl2u"]
+[ext_resource type="Texture2D" uid="uid://c7y8vlqoav1m0" path="res://assets/art/sprites/characters/Player00Aim.png" id="4_mgwnb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4rl2u"]
+radius = 98.32599
+
+[node name="Player" type="CharacterBody2D" unique_id=89750377]
+script = ExtResource("1_kjp8n")
+move_speed = null
+fire_interval = null
+control_scheme = null
+joy_id = null
+bullet_scene = ExtResource("2_4rl2u")
+
+[node name="IdleSprite" type="Sprite2D" parent="." unique_id=1617459845]
+position = Vector2(43, -4)
+rotation = -1.5707964
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_4rl2u")
+
+[node name="AimSprite" type="Sprite2D" parent="." unique_id=544307447]
+position = Vector2(97, 0)
+rotation = -1.5707964
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_mgwnb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1207494104]
+shape = SubResource("CircleShape2D_4rl2u")
+disabled = true
+
+[node name="WeaponPivot" type="Node2D" parent="." unique_id=471837847]
+
+[node name="Muzzle" type="Marker2D" parent="WeaponPivot" unique_id=1446434481]
+position = Vector2(219, 0)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1969703434]
+zoom = Vector2(0.3, 0.3)
