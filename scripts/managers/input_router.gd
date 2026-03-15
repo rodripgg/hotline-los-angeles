@@ -21,9 +21,9 @@ func get_move_vector(control_scheme: int, joy_id: int = 0) -> Vector2:
 
 	return v.limit_length(1.0)
 
-func get_aim_vector(owner: Node2D, control_scheme: int, joy_id: int = 0) -> Vector2:
+func get_aim_vector(source_node: Node2D, control_scheme: int, joy_id: int = 0) -> Vector2:
 	if control_scheme == ControlScheme.KEYBOARD_MOUSE:
-		var mouse_dir := owner.get_global_mouse_position() - owner.global_position
+		var mouse_dir := source_node.get_global_mouse_position() - source_node.global_position
 		if mouse_dir.length() <= 0.001:
 			return Vector2.ZERO
 		return mouse_dir.normalized()

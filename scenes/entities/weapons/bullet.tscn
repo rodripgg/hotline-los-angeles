@@ -1,19 +1,30 @@
 [gd_scene format=3 uid="uid://b4r6dccfkqmcb"]
 
 [ext_resource type="Script" uid="uid://dvbs6ndua0r2g" path="res://scripts/gameplay/projectiles/bullet.gd" id="1_a60bp"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_a60bp"]
-size = Vector2(20, 20)
+[ext_resource type="PackedScene" uid="uid://dn2styhfrldd5" path="res://scenes/fx/shoot_particles.tscn" id="2_8vucs"]
+[ext_resource type="Texture2D" uid="uid://4t7tjwihcy07" path="res://assets/art/sprites/weapons/Bullet00.png" id="2_ug2aq"]
+[ext_resource type="PackedScene" uid="uid://bumw1srakq0u" path="res://scenes/fx/impact_particles.tscn" id="4_r0khf"]
+[ext_resource type="PackedScene" uid="uid://8ybikt3xv2eb" path="res://scenes/fx/blood_particles.tscn" id="5_nnpkq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a60bp"]
+radius = 5.0
 
 [node name="Bullet" type="Area2D" unique_id=930623741]
+scale = Vector2(2, 2)
 script = ExtResource("1_a60bp")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=578977834]
-texture = SubResource("PlaceholderTexture2D_a60bp")
+speed = 2000.0
+max_distance = 10000.0
+shoot_particles_scene = ExtResource("2_8vucs")
+impact_particles_scene = ExtResource("4_r0khf")
+blood_particles_scene = ExtResource("5_nnpkq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=512484085]
 shape = SubResource("CircleShape2D_a60bp")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=2043903221]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=795137967]
+position = Vector2(-1.0000001, 0)
+rotation = 1.5707964
+scale = Vector2(0.05, 0.03)
+texture = ExtResource("2_ug2aq")

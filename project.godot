@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Hotline Los Angeles"
+run/main_scene="uid://cw66xpitl0575"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 

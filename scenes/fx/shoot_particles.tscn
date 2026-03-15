@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dn2styhfrldd5"]
+
+[ext_resource type="Material" uid="uid://b8463ule8kwae" path="res://assets/particles/ShootParticles.tres" id="1_7yaik"]
+
+[node name="ShootParticles" type="GPUParticles2D" unique_id=777770636]
+emitting = false
+amount = 6
+lifetime = 0.18000000000000002
+one_shot = true
+explosiveness = 1.0
+process_material = ExtResource("1_7yaik")

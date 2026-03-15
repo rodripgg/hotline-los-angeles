@@ -3,36 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://ch3qto5qo2fku" path="res://scenes/entities/characters/player.tscn" id="1_x3phh"]
 [ext_resource type="Texture2D" uid="uid://bgvfgv1741ns4" path="res://assets/art/textures/world/FloorTile.png" id="2_3ial6"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ial6"]
+size = Vector2(512, 96)
+
 [node name="TestArena" type="Node2D" unique_id=1834121703]
-
-[node name="Floor" type="TileMapLayer" parent="." unique_id=88714161]
-
-[node name="Walls" type="Node2D" parent="." unique_id=1397311577]
-visible = false
-
-[node name="WallTop" type="StaticBody2D" parent="Walls" unique_id=1767638638]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallTop" unique_id=1853342227]
-
-[node name="Sprite2D" type="Sprite2D" parent="Walls/WallTop" unique_id=314554911]
-
-[node name="WallBottom" type="StaticBody2D" parent="Walls" unique_id=25466970]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallBottom" unique_id=1629164172]
-
-[node name="Sprite2D" type="Sprite2D" parent="Walls/WallBottom" unique_id=1045538506]
-
-[node name="WallLeft" type="StaticBody2D" parent="Walls" unique_id=1667551173]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallLeft" unique_id=235016197]
-
-[node name="Sprite2D" type="Sprite2D" parent="Walls/WallLeft" unique_id=1458131560]
-
-[node name="WallRight" type="StaticBody2D" parent="Walls" unique_id=85143736]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallRight" unique_id=1667442630]
-
-[node name="Sprite2D" type="Sprite2D" parent="Walls/WallRight" unique_id=380100663]
 
 [node name="Floor2" type="Node2D" parent="." unique_id=50837487]
 
@@ -83,4 +57,63 @@ texture = ExtResource("2_3ial6")
 position = Vector2(1024, 1024)
 texture = ExtResource("2_3ial6")
 
+[node name="Walls" type="Node2D" parent="." unique_id=1397311577]
+
+[node name="Wall" type="StaticBody2D" parent="Walls" unique_id=1767638638]
+position = Vector2(0, -240)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall" unique_id=1853342227]
+position = Vector2(0, -32)
+shape = SubResource("RectangleShape2D_3ial6")
+
+[node name="Polygon2D" type="Polygon2D" parent="Walls/Wall" unique_id=928785059]
+position = Vector2(128, 48)
+color = Color(0.5449743, 0.54497427, 0.54497427, 1)
+texture_scale = Vector2(-7.775, -7.775)
+polygon = PackedVector2Array(127.99994, -32.000008, -384, -32.000008, -384, -128, 128, -128)
+uv = PackedVector2Array(-239.99998, -40, -383.99997, -40, -383.99997, -56, -239.99998, -56)
+
+[node name="Wall2" type="StaticBody2D" parent="Walls" unique_id=2094491980]
+position = Vector2(512, -240)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall2" unique_id=473676728]
+position = Vector2(0, -32)
+shape = SubResource("RectangleShape2D_3ial6")
+
+[node name="Polygon2D" type="Polygon2D" parent="Walls/Wall2" unique_id=1383231857]
+position = Vector2(128, 48)
+color = Color(0.5449743, 0.54497427, 0.54497427, 1)
+texture_scale = Vector2(-7.775, -7.775)
+polygon = PackedVector2Array(127.99994, -32.000008, -384, -32.000008, -384, -128, 128, -128)
+uv = PackedVector2Array(-239.99998, -40, -383.99997, -40, -383.99997, -56, -239.99998, -56)
+
+[node name="Wall3" type="StaticBody2D" parent="Walls" unique_id=353127796]
+position = Vector2(1024, -240)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall3" unique_id=387664401]
+position = Vector2(0, -32)
+shape = SubResource("RectangleShape2D_3ial6")
+
+[node name="Polygon2D" type="Polygon2D" parent="Walls/Wall3" unique_id=1788293740]
+position = Vector2(128, 48)
+color = Color(0.5449743, 0.54497427, 0.54497427, 1)
+texture_scale = Vector2(-7.775, -7.775)
+polygon = PackedVector2Array(127.99994, -32.000008, -384, -32.000008, -384, -128, 128, -128)
+uv = PackedVector2Array(-239.99998, -40, -383.99997, -40, -383.99997, -56, -239.99998, -56)
+
+[node name="Wall4" type="StaticBody2D" parent="Walls" unique_id=709346376]
+position = Vector2(1536, -240)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall4" unique_id=1918569349]
+position = Vector2(0, -32)
+shape = SubResource("RectangleShape2D_3ial6")
+
+[node name="Polygon2D" type="Polygon2D" parent="Walls/Wall4" unique_id=1105880093]
+position = Vector2(128, 48)
+color = Color(0.5449743, 0.54497427, 0.54497427, 1)
+texture_scale = Vector2(-7.775, -7.775)
+polygon = PackedVector2Array(127.99994, -32.000008, -384, -32.000008, -384, -128, 128, -128)
+uv = PackedVector2Array(-239.99998, -40, -383.99997, -40, -383.99997, -56, -239.99998, -56)
+
 [node name="Player" parent="." unique_id=89750377 instance=ExtResource("1_x3phh")]
+move_speed = 2400.0
