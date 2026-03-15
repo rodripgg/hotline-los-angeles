@@ -11,12 +11,19 @@ extends CharacterBody2D
 
 @onready var idle_sprite: Sprite2D = $IdleSprite
 @onready var aim_sprite: Sprite2D = $AimSprite
+@onready var dead_sprite: Sprite2D = $DeadSprite
+@onready var health_component: HealthComponent = $HealthComponent
 
 var facing_dir: Vector2 = Vector2.RIGHT
 var fire_cooldown: float = 0.0
+var is_dead: bool = false
 
 func _ready() -> void:
 	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
+	health_component.died.connect(_on_died)
+	idle_sprite.visible = true
+	aim_sprite.visible = false
+	dead_sprite.visible = false
 
 func _physics_process(delta: float) -> void:
 	_handle_move()
@@ -70,6 +77,27 @@ func _shoot() -> void:
 
 
 func _update_sprite_state(is_aiming: bool) -> void:
+	if is_dead:
+		return
 	idle_sprite.visible = not is_aiming
 	aim_sprite.visible = is_aiming
+	dead_sprite.visible = false
 	
+func _show_dead_state() -> void:
+	idle_sprite.visible = false
+	aim_sprite.visible = false
+	dead_sprite.visible = true
+	
+func apply_damage(amount: int) -> void:
+	health_component.damage(amount)
+	
+func _on_died() -> void:
+	is_dead = true
+	_show_dead_state()
+	set_physics_process(false)
+	$CollisionShape2D.disabled = true
+	weapon_pivot.visible = false
+	
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("debug_damage"):
+		apply_damage(10)

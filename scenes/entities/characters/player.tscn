@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://b4r6dccfkqmcb" path="res://scenes/entities/weapons/bullet.tscn" id="2_4rl2u"]
 [ext_resource type="Texture2D" uid="uid://ccpgaxo2l26gt" path="res://assets/art/sprites/characters/Player00.png" id="3_4rl2u"]
 [ext_resource type="Texture2D" uid="uid://c7y8vlqoav1m0" path="res://assets/art/sprites/characters/Player00Aim.png" id="4_mgwnb"]
+[ext_resource type="Texture2D" uid="uid://be00375dus5jy" path="res://assets/art/sprites/characters/Player00Dead.png" id="5_l5hi7"]
+[ext_resource type="Script" uid="uid://ba732l8xhlyfb" path="res://scripts/gameplay/components/health_component.gd" id="5_vqv6a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4rl2u"]
 radius = 98.32599
@@ -25,6 +27,13 @@ rotation = -1.5707964
 scale = Vector2(0.52, 0.52)
 texture = ExtResource("4_mgwnb")
 
+[node name="DeadSprite" type="Sprite2D" parent="." unique_id=1412867697]
+visible = false
+position = Vector2(7.9999995, 23.999998)
+rotation = 1.5707964
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("5_l5hi7")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1207494104]
 position = Vector2(27.11, 0)
 scale = Vector2(1.36, 1.36)
@@ -37,3 +46,7 @@ position = Vector2(238, 0)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1969703434]
 zoom = Vector2(0.3, 0.3)
+
+[node name="HealthComponent" type="Node" parent="." unique_id=1830725305]
+script = ExtResource("5_vqv6a")
+metadata/_custom_type_script = "uid://ba732l8xhlyfb"
