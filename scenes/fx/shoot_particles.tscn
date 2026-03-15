@@ -4,7 +4,7 @@
 
 [node name="ShootParticles" type="GPUParticles2D" unique_id=777770636]
 emitting = false
-amount = 6
+amount = 12
 lifetime = 0.18000000000000002
 one_shot = true
 explosiveness = 1.0

@@ -12,6 +12,7 @@ radius = 98.32599
 
 [node name="Player" type="CharacterBody2D" unique_id=89750377]
 script = ExtResource("1_kjp8n")
+fire_interval = 1.0
 bullet_scene = ExtResource("2_4rl2u")
 
 [node name="IdleSprite" type="Sprite2D" parent="." unique_id=1617459845]

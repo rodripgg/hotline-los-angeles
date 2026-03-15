@@ -8,4 +8,4 @@ initial_velocity_max = 220.0
 gravity = Vector3(0, 0, 0)
 scale_min = 15.0
 scale_max = 20.0
-color = Color(0.80784315, 0.65882355, 0, 1)
+color = Color(0.80784315, 0.5882353, 0, 1)
