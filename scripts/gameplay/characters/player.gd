@@ -1,22 +1,31 @@
 extends CharacterBody2D
 
+signal ammo_changed(current: int, max_ammo: int)
+
 @export var move_speed: float = 1400.0
 @export var fire_interval: float = 0.52
+
+# control
 @export_enum("KeyboardMouse", "Gamepad") var control_scheme: int = 0
 @export var joy_id: int = 0
-@export var bullet_scene: PackedScene
 
+# weapon
+@export var bullet_scene: PackedScene
 @onready var weapon_pivot: Node2D = $WeaponPivot
 @onready var muzzle: Marker2D = $WeaponPivot/Muzzle
 
+# player
 @onready var idle_sprite: Sprite2D = $IdleSprite
 @onready var aim_sprite: Sprite2D = $AimSprite
 @onready var dead_sprite: Sprite2D = $DeadSprite
 @onready var health_component: HealthComponent = $HealthComponent
 
+# weapon
+@export var max_ammo: int = 20
+var current_ammo: int = 20
+var is_dead: bool = false
 var facing_dir: Vector2 = Vector2.RIGHT
 var fire_cooldown: float = 0.0
-var is_dead: bool = false
 
 func _ready() -> void:
 	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
@@ -24,12 +33,15 @@ func _ready() -> void:
 	idle_sprite.visible = true
 	aim_sprite.visible = false
 	dead_sprite.visible = false
+	current_ammo = max_ammo
+	ammo_changed.emit(current_ammo, max_ammo)
 
 func _physics_process(delta: float) -> void:
+	if is_dead:
+		return
 	_handle_move()
 	_handle_fire(delta)
 	_handle_aim()
-	_handle_fire(delta)
 
 func _handle_move() -> void:
 	var move_dir := InputRouter.get_move_vector(control_scheme, joy_id)
@@ -41,10 +53,8 @@ func _handle_aim() -> void:
 	if aim_dir != Vector2.ZERO:
 		facing_dir = aim_dir
 		rotation = facing_dir.angle()
-
 	var is_aiming := InputRouter.is_aim_pressed(control_scheme, joy_id) \
 		or InputRouter.is_fire_pressed(control_scheme, joy_id)
-
 	_update_sprite_state(is_aiming)
 
 func _handle_fire(delta: float) -> void:
@@ -63,18 +73,23 @@ func _shoot() -> void:
 	if bullet_scene == null:
 		push_warning("No hay bullet_scene asignada en Player.")
 		return
-
-
+	if current_ammo <= 0:
+		return
+	current_ammo -= 1
+	ammo_changed.emit(current_ammo, max_ammo)
 	var bullet := bullet_scene.instantiate()
 	bullet.global_position = muzzle.global_position
 	bullet.rotation = facing_dir.angle()
-
 	if bullet.has_method("setup"):
 		bullet.setup(facing_dir)
-
 	get_tree().current_scene.add_child(bullet)
-	
 
+func reload_full() -> void:
+	current_ammo = max_ammo
+	ammo_changed.emit(current_ammo, max_ammo)
+
+func apply_damage(amount: int) -> void:
+	health_component.damage(amount)
 
 func _update_sprite_state(is_aiming: bool) -> void:
 	if is_dead:
@@ -87,10 +102,7 @@ func _show_dead_state() -> void:
 	idle_sprite.visible = false
 	aim_sprite.visible = false
 	dead_sprite.visible = true
-	
-func apply_damage(amount: int) -> void:
-	health_component.damage(amount)
-	
+
 func _on_died() -> void:
 	is_dead = true
 	_show_dead_state()
@@ -101,3 +113,7 @@ func _on_died() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("debug_damage"):
 		apply_damage(10)
+	if event.is_action_pressed("debug_heal"):
+		health_component.heal(10)
+	if event.is_action_pressed("debug_reload"):
+		reload_full()

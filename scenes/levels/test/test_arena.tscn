@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cw66xpitl0575"]
 
+[ext_resource type="Script" uid="uid://bq3agsgh4ysc8" path="res://scripts/gameplay/levels/test_arena.gd" id="1_1hciv"]
 [ext_resource type="Texture2D" uid="uid://ca7vqmlm6eiiq" path="res://assets/art/textures/world/WoodTile.jpg" id="1_aik4n"]
 [ext_resource type="PackedScene" uid="uid://ch3qto5qo2fku" path="res://scenes/entities/characters/player.tscn" id="1_x3phh"]
 [ext_resource type="Texture2D" uid="uid://113ok2cyfaun" path="res://assets/art/textures/world/WallStart.png" id="2_aik4n"]
@@ -19,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://j4lnnhp8j484" path="res://assets/art/sprites/decoration/TiresSprite.png" id="16_y0b4k"]
 [ext_resource type="Texture2D" uid="uid://vrv1i2iubet6" path="res://assets/art/sprites/decoration/WashBasinSprite.png" id="18_s348h"]
 [ext_resource type="Texture2D" uid="uid://uwxqfgxyl8w6" path="res://assets/art/sprites/decoration/ChairSprite.png" id="19_oa6j3"]
+[ext_resource type="PackedScene" uid="uid://bkj1k1arutlm0" path="res://scenes/ui/hud/player_hud.tscn" id="20_r4hr2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ial6"]
 size = Vector2(283.33423, 80)
@@ -72,6 +74,7 @@ size = Vector2(272, 200)
 size = Vector2(304, 336)
 
 [node name="TestArena" type="Node2D" unique_id=1834121703]
+script = ExtResource("1_1hciv")
 
 [node name="World" type="Node2D" parent="." unique_id=122882190]
 
@@ -1196,7 +1199,7 @@ scale = Vector2(0.28800014, 0.40319663)
 texture = ExtResource("11_8p47l")
 
 [node name="Bed" type="StaticBody2D" parent="Decoration" unique_id=1227284869]
-position = Vector2(2504, -3000)
+position = Vector2(2504, -2884)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Decoration/Bed" unique_id=1857032097]
 position = Vector2(4, -4)
@@ -1324,3 +1327,5 @@ shape = SubResource("RectangleShape2D_1hciv")
 [node name="Sprite2D" type="Sprite2D" parent="Decoration/Chair" unique_id=1296006404]
 scale = Vector2(0.35999942, 0.35999942)
 texture = ExtResource("19_oa6j3")
+
+[node name="PlayerHud" parent="." unique_id=1129002567 instance=ExtResource("20_r4hr2")]
