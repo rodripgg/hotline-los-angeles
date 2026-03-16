@@ -1,0 +1,186 @@
+[gd_scene format=3 uid="uid://cujpksthdv7va"]
+
+[ext_resource type="Texture2D" uid="uid://d1vftwp7w0cpb" path="res://assets/art/sprites/vehicles/CarSprite.png" id="1_3gp5g"]
+[ext_resource type="Texture2D" uid="uid://yfricuylq2kg" path="res://assets/art/sprites/decoration/ArmChairSprite.png" id="2_y254v"]
+[ext_resource type="Texture2D" uid="uid://dbqjcj3dbssh4" path="res://assets/art/sprites/decoration/DesktopSprite.png" id="3_ixc7o"]
+[ext_resource type="Texture2D" uid="uid://b4qe2iefmqjln" path="res://assets/art/sprites/decoration/TableSprite.png" id="4_wi5ts"]
+[ext_resource type="Texture2D" uid="uid://cf37bqvdv0p4u" path="res://assets/art/sprites/decoration/BedSprite.png" id="5_7mcxy"]
+[ext_resource type="Texture2D" uid="uid://pw0arugt88v5" path="res://assets/art/sprites/decoration/PlantSprite.png" id="6_2ocx6"]
+[ext_resource type="Texture2D" uid="uid://o4al04b2i8wg" path="res://assets/art/sprites/decoration/TreeSprite.png" id="7_almsw"]
+[ext_resource type="Texture2D" uid="uid://d06vfuamwwm5" path="res://assets/art/sprites/decoration/TubSprite.png" id="8_luqjy"]
+[ext_resource type="Texture2D" uid="uid://j4lnnhp8j484" path="res://assets/art/sprites/decoration/TiresSprite.png" id="9_1mttt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rsn46"]
+size = Vector2(576, 1376.924)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8p47l"]
+size = Vector2(400, 408)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n6qei"]
+size = Vector2(656, 320)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pv1mb"]
+size = Vector2(784, 368)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tfcty"]
+size = Vector2(664, 904)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tfcty"]
+radius = 136.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e7f6s"]
+radius = 865.0023
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y0b4k"]
+size = Vector2(890, 418)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_as18u"]
+radius = 177.02542
+
+[node name="Decoration" type="Node2D" unique_id=1675549074]
+
+[node name="Car" type="StaticBody2D" parent="." unique_id=972535173]
+position = Vector2(1992, 64)
+
+[node name="Sprite2D" type="Sprite2D" parent="Car" unique_id=62185467]
+position = Vector2(0, -24)
+texture = ExtResource("1_3gp5g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Car" unique_id=961951485]
+position = Vector2(12, 0)
+rotation = 1.5707964
+scale = Vector2(1, 1.0399994)
+shape = SubResource("RectangleShape2D_rsn46")
+
+[node name="ArmChair" type="StaticBody2D" parent="." unique_id=617312516]
+position = Vector2(4416, -248)
+rotation = -1.0471976
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArmChair" unique_id=1785641469]
+position = Vector2(8, -20)
+shape = SubResource("RectangleShape2D_8p47l")
+
+[node name="Sprite2D" type="Sprite2D" parent="ArmChair" unique_id=1360171483]
+scale = Vector2(0.6020528, 0.6020528)
+texture = ExtResource("2_y254v")
+
+[node name="ArmChair2" type="StaticBody2D" parent="." unique_id=723456131]
+position = Vector2(4416, 472)
+rotation = -2.0943952
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArmChair2" unique_id=712897752]
+position = Vector2(8, -20)
+shape = SubResource("RectangleShape2D_8p47l")
+
+[node name="Sprite2D" type="Sprite2D" parent="ArmChair2" unique_id=1804575075]
+scale = Vector2(0.6020528, 0.6020528)
+texture = ExtResource("2_y254v")
+
+[node name="Desktop" type="StaticBody2D" parent="." unique_id=2064148836]
+position = Vector2(5248, 96)
+rotation = -1.5707964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Desktop" unique_id=659408807]
+position = Vector2(0, -32)
+shape = SubResource("RectangleShape2D_n6qei")
+
+[node name="Sprite2D" type="Sprite2D" parent="Desktop" unique_id=1282440193]
+scale = Vector2(0.60000026, 0.60000026)
+texture = ExtResource("3_ixc7o")
+
+[node name="Table" type="StaticBody2D" parent="." unique_id=619067756]
+position = Vector2(1280, -952)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Table" unique_id=1640427703]
+position = Vector2(0, -24)
+shape = SubResource("RectangleShape2D_pv1mb")
+
+[node name="Sprite2D" type="Sprite2D" parent="Table" unique_id=599210068]
+scale = Vector2(0.72000027, 0.72000027)
+texture = ExtResource("4_wi5ts")
+
+[node name="Bed" type="StaticBody2D" parent="." unique_id=1530571912]
+position = Vector2(2504, -3000)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bed" unique_id=355879556]
+position = Vector2(4, -4)
+shape = SubResource("RectangleShape2D_tfcty")
+
+[node name="Sprite2D" type="Sprite2D" parent="Bed" unique_id=1699609087]
+texture = ExtResource("5_7mcxy")
+
+[node name="Plant" type="StaticBody2D" parent="." unique_id=2067219768]
+position = Vector2(658, -2050)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plant" unique_id=495992690]
+shape = SubResource("CircleShape2D_tfcty")
+
+[node name="Sprite2D" type="Sprite2D" parent="Plant" unique_id=1538094789]
+position = Vector2(0, 11.999999)
+scale = Vector2(0.39999932, 0.39999932)
+texture = ExtResource("6_2ocx6")
+
+[node name="Plant2" type="StaticBody2D" parent="." unique_id=70813200]
+position = Vector2(658, -2050)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plant2" unique_id=1339459690]
+shape = SubResource("CircleShape2D_tfcty")
+
+[node name="Sprite2D" type="Sprite2D" parent="Plant2" unique_id=1473598681]
+position = Vector2(-816.99994, 1175.9999)
+scale = Vector2(0.39999932, 0.39999932)
+texture = ExtResource("6_2ocx6")
+
+[node name="Plant3" type="StaticBody2D" parent="." unique_id=1142040868]
+position = Vector2(658, -2050)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plant3" unique_id=1152500859]
+shape = SubResource("CircleShape2D_tfcty")
+
+[node name="Sprite2D" type="Sprite2D" parent="Plant3" unique_id=1439086799]
+position = Vector2(5028.9995, 3019)
+scale = Vector2(0.39999932, 0.39999932)
+texture = ExtResource("6_2ocx6")
+
+[node name="Tree" type="StaticBody2D" parent="." unique_id=314294154]
+position = Vector2(-1517, -2547)
+
+[node name="Sprite2D" type="Sprite2D" parent="Tree" unique_id=1659309999]
+scale = Vector2(2.3600001, 2.3600001)
+texture = ExtResource("7_almsw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree" unique_id=2028517600]
+shape = SubResource("CircleShape2D_e7f6s")
+
+[node name="Tub" type="StaticBody2D" parent="." unique_id=1551164899]
+position = Vector2(965, -2817)
+
+[node name="Sprite2D" type="Sprite2D" parent="Tub" unique_id=558996460]
+scale = Vector2(0.59999985, 0.59999985)
+texture = ExtResource("8_luqjy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tub" unique_id=576937732]
+position = Vector2(3, -7)
+shape = SubResource("RectangleShape2D_y0b4k")
+
+[node name="Tires" type="StaticBody2D" parent="." unique_id=1165426316]
+position = Vector2(416, -952)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tires" unique_id=461303135]
+shape = SubResource("CircleShape2D_as18u")
+
+[node name="Sprite2D" type="Sprite2D" parent="Tires" unique_id=13934542]
+scale = Vector2(0.4799993, 0.4799993)
+texture = ExtResource("9_1mttt")
+
+[node name="Tires2" type="StaticBody2D" parent="." unique_id=1490961485]
+position = Vector2(-102, 972)
+rotation = 3.1415927
+scale = Vector2(1.0000007, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tires2" unique_id=600065351]
+shape = SubResource("CircleShape2D_as18u")
+
+[node name="Sprite2D" type="Sprite2D" parent="Tires2" unique_id=1863885857]
+scale = Vector2(0.4799993, 0.4799993)
+texture = ExtResource("9_1mttt")

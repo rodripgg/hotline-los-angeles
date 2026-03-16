@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pw0arugt88v5"
-path="res://.godot/imported/PlantSprite.png-3df66acc02ee67c4028bb1557b292bc5.ctex"
+uid="uid://d06vfuamwwm5"
+path="res://.godot/imported/TubSprite.png-76e4bd3ac231e025d7faada5be8b56ac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/textures/world/PlantSprite.png"
-dest_files=["res://.godot/imported/PlantSprite.png-3df66acc02ee67c4028bb1557b292bc5.ctex"]
+source_file="res://assets/art/sprites/decoration/TubSprite.png"
+dest_files=["res://.godot/imported/TubSprite.png-76e4bd3ac231e025d7faada5be8b56ac.ctex"]
 
 [params]
 

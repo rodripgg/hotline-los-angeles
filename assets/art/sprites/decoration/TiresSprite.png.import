@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uwxqfgxyl8w6"
-path="res://.godot/imported/ChairSprite.png-98dadb30b3b2526adee065f5111d6257.ctex"
+uid="uid://j4lnnhp8j484"
+path="res://.godot/imported/TiresSprite.png-4e135d95fee728cc8ddb1cd3c95f7686.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/textures/world/ChairSprite.png"
-dest_files=["res://.godot/imported/ChairSprite.png-98dadb30b3b2526adee065f5111d6257.ctex"]
+source_file="res://assets/art/sprites/decoration/TiresSprite.png"
+dest_files=["res://.godot/imported/TiresSprite.png-4e135d95fee728cc8ddb1cd3c95f7686.ctex"]
 
 [params]
 

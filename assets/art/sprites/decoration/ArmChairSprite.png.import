@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cf37bqvdv0p4u"
-path="res://.godot/imported/BedSprite.png-cf0a0bbf7f6017e636fb0f683276e149.ctex"
+uid="uid://yfricuylq2kg"
+path="res://.godot/imported/ArmChairSprite.png-941ad41d5f28e7bcf089d5aeac8e7daf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/textures/world/BedSprite.png"
-dest_files=["res://.godot/imported/BedSprite.png-cf0a0bbf7f6017e636fb0f683276e149.ctex"]
+source_file="res://assets/art/sprites/decoration/ArmChairSprite.png"
+dest_files=["res://.godot/imported/ArmChairSprite.png-941ad41d5f28e7bcf089d5aeac8e7daf.ctex"]
 
 [params]
 
